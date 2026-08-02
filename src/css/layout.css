@@ -1,0 +1,86 @@
+/* ============================================
+   LAYOUT — Container, Grid, Section base
+   ============================================ */
+
+/* ── Container ── */
+.container {
+  width: 100%;
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 0 var(--container-pad);
+}
+
+/* ── Section base ── */
+.section {
+  position: relative;
+  padding: var(--section-py) 0;
+}
+
+.section--alt {
+  background-color: var(--bg-alt);
+}
+
+/* ── Section Header ── */
+.section-header {
+  margin-bottom: var(--space-16);
+  text-align: center;
+}
+
+.section-tag {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: var(--text-sm);
+  color: var(--secondary);
+  letter-spacing: 0.05em;
+  margin-bottom: var(--space-3);
+}
+
+.section-title {
+  font-size: clamp(var(--text-3xl), 5vw, var(--text-5xl));
+  font-weight: 800;
+  color: var(--text);
+  line-height: 1.1;
+  margin-bottom: var(--space-4);
+}
+
+.section-subtitle {
+  font-size: var(--text-lg);
+  color: var(--muted);
+  max-width: 520px;
+  margin: 0 auto;
+}
+
+/* ── Grid utilities ── */
+.grid { display: grid; }
+.flex { display: flex; }
+.flex-col { flex-direction: column; }
+.items-center { align-items: center; }
+.justify-center { justify-content: center; }
+.justify-between { justify-content: space-between; }
+.gap-4 { gap: var(--space-4); }
+.gap-6 { gap: var(--space-6); }
+.gap-8 { gap: var(--space-8); }
+
+/* ── Responsive breakpoints reference:
+   sm:  480px
+   md:  768px
+   lg:  1024px
+   xl:  1200px
+   ──────────────────────────────── */
+
+@media (max-width: 768px) {
+  :root {
+    --section-py: var(--space-20);
+    --container-pad: var(--space-5);
+  }
+  .section-header {
+    margin-bottom: var(--space-10);
+  }
+}
+
+@media (max-width: 480px) {
+  :root {
+    --section-py: var(--space-16);
+    --container-pad: var(--space-4);
+  }
+}

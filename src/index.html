@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="João Victor Conde — Desenvolvedor Full Stack especializado em React, TypeScript, Node.js e Java. Estagiário na Pigz · Orange Labs com foco em Full Stack, Gestão de Projetos e Cibersegurança." />
+  <meta name="author" content="João Victor Conde" />
+  <meta property="og:title" content="João Victor Conde — Desenvolvedor Full Stack" />
+  <meta property="og:description" content="Portfolio de João Victor Conde, desenvolvedor Full Stack com foco em React, TypeScript, Node.js e Cibersegurança." />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="theme-color" content="#0a0f1e" />
+  <title>João Victor Conde — Desenvolvedor Full Stack</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/reset.css" />
+  <link rel="stylesheet" href="css/tokens.css" />
+  <link rel="stylesheet" href="css/animations.css" />
+  <link rel="stylesheet" href="css/layout.css" />
+  <link rel="stylesheet" href="css/components.css" />
+  <link rel="stylesheet" href="css/sections/nav.css" />
+  <link rel="stylesheet" href="css/sections/hero.css" />
+  <link rel="stylesheet" href="css/sections/about.css" />
+  <link rel="stylesheet" href="css/sections/projects.css" />
+  <link rel="stylesheet" href="css/sections/skills.css" />
+  <link rel="stylesheet" href="css/sections/experience.css" />
+  <link rel="stylesheet" href="css/sections/certifications.css" />
+  <link rel="stylesheet" href="css/sections/education.css" />
+  <link rel="stylesheet" href="css/sections/contact.css" />
+  <link rel="stylesheet" href="css/sections/footer.css" />
+</head>
+<body>
+
+  <!-- Custom Cursor -->
+  <div class="cursor" id="cursor" aria-hidden="true"></div>
+  <div class="cursor-follower" id="cursor-follower" aria-hidden="true"></div>
+
+  <!-- Preloader -->
+  <div class="preloader" id="preloader" role="status" aria-label="Carregando...">
+    <div class="preloader__content">
+      <div class="preloader__logo">JVC</div>
+      <div class="preloader__bar">
+        <div class="preloader__fill"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════
+       NAVIGATION
+  ══════════════════════════════════════ -->
+  <nav class="navbar" id="navbar" role="navigation" aria-label="Navegação principal">
+    <div class="container">
+      <div class="navbar__inner">
+        <a href="#hero" class="navbar__logo" id="nav-logo" aria-label="Voltar ao topo">
+          JVC<span class="logo-dot">.</span>
+        </a>
+
+        <ul class="navbar__links" role="list">
+          <li><a href="#about"           class="nav-link" data-section="about">Sobre</a></li>
+          <li><a href="#projects"        class="nav-link" data-section="projects">Projetos</a></li>
+          <li><a href="#experience"      class="nav-link" data-section="experience">Experiência</a></li>
+          <li><a href="#certifications"  class="nav-link" data-section="certifications">Certificações</a></li>
+          <li><a href="#education"       class="nav-link" data-section="education">Formação</a></li>
+          <li><a href="#skills"          class="nav-link" data-section="skills">Habilidades</a></li>
+          <li><a href="#contact"         class="nav-link" data-section="contact">Contato</a></li>
+        </ul>
+
+        <button class="navbar__hamburger" id="hamburger" aria-label="Abrir menu" aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" id="mobile-menu" aria-hidden="true">
+    <ul class="mobile-menu__links" role="list">
+      <li><a href="#about"          class="mobile-nav-link">Sobre</a></li>
+      <li><a href="#projects"       class="mobile-nav-link">Projetos</a></li>
+      <li><a href="#experience"     class="mobile-nav-link">Experiência</a></li>
+      <li><a href="#certifications" class="mobile-nav-link">Certificações</a></li>
+      <li><a href="#education"      class="mobile-nav-link">Formação</a></li>
+      <li><a href="#skills"         class="mobile-nav-link">Habilidades</a></li>
+      <li><a href="#contact"        class="mobile-nav-link">Contato</a></li>
+    </ul>
+  </div>
+
+  <main>
+
+    <!-- ══════════════════════════════════════
+         HERO
+    ══════════════════════════════════════ -->
+    <section id="hero" class="section hero" aria-label="Apresentação">
+      <canvas id="hero-canvas" class="hero__canvas" aria-hidden="true"></canvas>
+
+      <div class="container">
+        <div class="hero__inner">
+
+          <!-- Content -->
+          <div class="hero__content">
+            <p class="hero__greeting reveal-up">Olá, eu sou 👋</p>
+
+            <h1 class="hero__name reveal-up">
+              João Victor<br />
+              <span class="hero__name-highlight">Conde</span>
+            </h1>
+
+            <div class="hero__role reveal-up" aria-label="Papel profissional">
+              <span class="hero__role-prefix">{">"}</span>
+              <span class="hero__typewriter" id="typewriter" aria-live="polite"></span>
+              <span class="hero__cursor" aria-hidden="true">|</span>
+            </div>
+
+            <p class="hero__tagline reveal-up">
+              Transformando problemas complexos em soluções elegantes,<br />
+              uma linha de código de cada vez.
+            </p>
+
+            <div class="hero__ctas reveal-up">
+              <a href="#projects" class="btn btn-primary" id="hero-cta-projects">Ver Projetos</a>
+              <a href="#contact"  class="btn btn-outline" id="hero-cta-contact">Fale Comigo</a>
+            </div>
+          </div>
+
+          <!-- Visual / Photo -->
+          <div class="hero__visual reveal-right">
+            <div class="hero__photo-wrapper">
+              <div class="hero__photo-ring"></div>
+              <div class="hero__photo-ring hero__photo-ring--2"></div>
+              <img
+                src="image/foto formatura.jpg"
+                alt="Foto de João Victor Conde"
+                class="hero__photo"
+                id="hero-photo"
+                width="320"
+                height="320"
+                loading="eager"
+              />
+            </div>
+
+            <div class="hero__float-card hero__float-card--1" aria-hidden="true">
+              <span class="float-card-icon">⚡</span>
+              <div>
+                <p class="float-card-label">Full Stack</p>
+                <p class="float-card-sub">Developer</p>
+              </div>
+            </div>
+
+            <div class="hero__float-card hero__float-card--2" aria-hidden="true">
+              <span class="float-card-icon">🔐</span>
+              <div>
+                <p class="float-card-label">Segurança</p>
+                <p class="float-card-sub">Cibersegurança</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="hero__scroll-indicator" aria-hidden="true">
+        <span>Scroll</span>
+        <div class="scroll-line"></div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════
+         ABOUT
+    ══════════════════════════════════════ -->
+    <section id="about" class="section about" aria-label="Sobre mim">
+      <div class="container">
+        <div class="section-header reveal-up">
+          <span class="section-tag">// sobre mim</span>
+          <h2 class="section-title">Quem sou eu</h2>
+        </div>
+
+        <div class="about__inner">
+          <div class="about__text reveal-left">
+            <p class="about__paragraph">
+              Sou <strong>João Victor Conde</strong>, estagiário de tecnologia na
+              <strong>Pigz · Orange Labs</strong>, apaixonado por construir experiências
+              digitais que fazem diferença. Meu foco está no desenvolvimento
+              <strong>Full Stack</strong> — do design da interface até a arquitetura
+              do banco de dados.
+            </p>
+            <p class="about__paragraph">
+              Além do código, me interesso profundamente por
+              <strong>Gestão de Projetos</strong> e <strong>Cibersegurança</strong>.
+              Acredito que um bom desenvolvedor precisa entender não apenas como
+              construir sistemas, mas como torná-los seguros e bem gerenciados.
+            </p>
+            <p class="about__paragraph">
+              Estou sempre buscando aprender e evoluir, trabalhando na intersecção entre
+              tecnologia, segurança e eficiência operacional.
+            </p>
+            <div class="about__links">
+              <a href="#contact" class="btn btn-primary">Entre em contato</a>
+              <a href="#" class="btn btn-outline" id="download-cv">Baixar CV</a>
+            </div>
+          </div>
+
+          <div class="about__stats reveal-right stagger-children">
+            <div class="stat-card">
+              <span class="stat-number">1+</span>
+              <span class="stat-label">Ano de experiência</span>
+            </div>
+            <div class="stat-card">
+              <span class="stat-number">7+</span>
+              <span class="stat-label">Tecnologias</span>
+            </div>
+            <div class="stat-card">
+              <span class="stat-number">3</span>
+              <span class="stat-label">Áreas de foco</span>
+            </div>
+            <div class="stat-card stat-card--wide">
+              <span class="stat-icon">🏢</span>
+              <div>
+                <p class="stat-company">Pigz · Orange Labs</p>
+                <p class="stat-role">Estagiário de Tecnologia</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════
+         PROJECTS
+    ══════════════════════════════════════ -->
+    <section id="projects" class="section projects" aria-label="Projetos">
+      <div class="container">
+        <div class="section-header reveal-up">
+          <span class="section-tag">// projetos</span>
+          <h2 class="section-title">O que construí</h2>
+          <p class="section-subtitle">Projetos que resolvem problemas reais — código aberto, demos ao vivo.</p>
+        </div>
+
+        <div class="projects__filters reveal-up" id="projects-filters" role="group" aria-label="Filtrar projetos">
+          <button class="filter-btn active" data-filter="all"      id="filter-all">Todos</button>
+          <button class="filter-btn"        data-filter="frontend"  id="filter-fe">Frontend</button>
+          <button class="filter-btn"        data-filter="backend"   id="filter-be">Backend</button>
+          <button class="filter-btn"        data-filter="fullstack" id="filter-fs">Full Stack</button>
+          <button class="filter-btn"        data-filter="security"  id="filter-sec">Segurança</button>
+        </div>
+
+        <div class="projects__grid" id="projects-grid" role="list">
+          <!-- Rendered by JS from projects-data.js -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════
+         EXPERIENCE (cursos, palestras, trabalho)
+    ══════════════════════════════════════ -->
+    <section id="experience" class="section experience" aria-label="Experiência profissional">
+      <div class="container">
+        <div class="section-header reveal-up">
+          <span class="section-tag">// experiência</span>
+          <h2 class="section-title">Trajetória</h2>
+          <p class="section-subtitle">Experiências profissionais, cursos e palestras que moldaram minha jornada.</p>
+        </div>
+
+        <div class="experience__timeline">
+
+          <div class="timeline-entry reveal-left">
+            <div class="timeline-card">
+              <div class="timeline-meta">
+                <div>
+                  <p class="timeline-company">Pigz · <span>Orange Labs</span></p>
+                  <p class="timeline-role">Estagiário de Tecnologia</p>
+                </div>
+                <span class="timeline-period">2024 — Presente</span>
+              </div>
+              <p class="timeline-desc">
+                Desenvolvimento de soluções Full Stack para o ecossistema interno da empresa.
+                Atuação em features de backend (Node.js, Java), interfaces React/TypeScript e
+                integrações com APIs externas. Envolvimento com gerenciamento de incidentes e
+                boas práticas de segurança em aplicações web.
+              </p>
+              <div class="timeline-tags">
+                <span class="badge">React</span>
+                <span class="badge">TypeScript</span>
+                <span class="badge">Node.js</span>
+                <span class="badge">Java</span>
+                <span class="badge">PostgreSQL</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Adicione mais entradas de cursos/palestras abaixo -->
+          <!-- Exemplo:
+          <div class="timeline-entry reveal-left">
+            <div class="timeline-card">
+              <div class="timeline-meta">
+                <div>
+                  <p class="timeline-company">Nome do Evento / Curso</p>
+                  <p class="timeline-role">Participante / Palestrante</p>
+                </div>
+                <span class="timeline-period">Mês Ano</span>
+              </div>
+              <p class="timeline-desc">Descrição da experiência...</p>
+            </div>
+          </div>
+          -->
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════
+         CERTIFICATIONS
+    ══════════════════════════════════════ -->
+    <section id="certifications" class="section certifications" aria-label="Certificações">
+      <div class="container">
+        <div class="section-header reveal-up">
+          <span class="section-tag">// certificações</span>
+          <h2 class="section-title">Certificados</h2>
+          <p class="section-subtitle">Cursos e certificações concluídos.</p>
+        </div>
+
+        <div class="certifications__grid">
+
+          <!-- Placeholder 1 — substitua pelos seus dados reais -->
+          <div class="cert-card cert-card--placeholder reveal-scale">
+            <div class="cert-card__icon">📜</div>
+            <div class="cert-card__body">
+              <p class="cert-card__title">Adicione sua certificação</p>
+              <p class="cert-card__issuer">Instituição emissora</p>
+              <p class="cert-card__date">Mês / Ano</p>
+            </div>
+          </div>
+
+          <!-- Placeholder 2 -->
+          <div class="cert-card cert-card--placeholder reveal-scale">
+            <div class="cert-card__icon">🏅</div>
+            <div class="cert-card__body">
+              <p class="cert-card__title">Adicione sua certificação</p>
+              <p class="cert-card__issuer">Instituição emissora</p>
+              <p class="cert-card__date">Mês / Ano</p>
+            </div>
+          </div>
+
+          <!-- Placeholder 3 -->
+          <div class="cert-card cert-card--placeholder reveal-scale">
+            <div class="cert-card__icon">⭐</div>
+            <div class="cert-card__body">
+              <p class="cert-card__title">Adicione sua certificação</p>
+              <p class="cert-card__issuer">Instituição emissora</p>
+              <p class="cert-card__date">Mês / Ano</p>
+            </div>
+          </div>
+
+          <!--
+            Para adicionar uma certificação real, copie o bloco abaixo e substitua os dados:
+
+            <div class="cert-card reveal-scale">
+              <div class="cert-card__icon">🏅</div>
+              <div class="cert-card__body">
+                <p class="cert-card__title">Nome do Certificado</p>
+                <p class="cert-card__issuer">Plataforma / Instituição</p>
+                <p class="cert-card__date">Mês / Ano</p>
+                <a href="URL_DO_CERTIFICADO" target="_blank" rel="noopener" class="cert-card__link">
+                  Ver certificado →
+                </a>
+              </div>
+            </div>
+          -->
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════
+         EDUCATION
+    ══════════════════════════════════════ -->
+    <section id="education" class="section education" aria-label="Formação acadêmica">
+      <div class="container">
+        <div class="section-header reveal-up">
+          <span class="section-tag">// formação</span>
+          <h2 class="section-title">Formação Acadêmica</h2>
+        </div>
+
+        <div class="education__grid">
+
+          <!-- Placeholder — substitua pelos seus dados reais -->
+          <div class="edu-card reveal-left">
+            <div class="edu-card__icon">🎓</div>
+            <div class="edu-card__body">
+              <div class="edu-card__header">
+                <div>
+                  <p class="edu-card__course">Nome do Curso / Graduação</p>
+                  <p class="edu-card__institution">Instituição de Ensino</p>
+                </div>
+                <div style="display:flex;flex-direction:column;gap:6px;align-items:flex-end;">
+                  <span class="edu-card__period">Ano início — Ano fim</span>
+                  <span class="edu-card__status edu-card__status--active">Em andamento</span>
+                </div>
+              </div>
+              <p class="edu-card__desc">
+                Adicione aqui uma breve descrição do curso, foco de estudos e atividades relevantes.
+              </p>
+            </div>
+          </div>
+
+          <!--
+            Para adicionar mais entradas, copie o bloco acima e substitua os dados.
+            Use edu-card__status--done para cursos concluídos.
+          -->
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════
+         SKILLS
+    ══════════════════════════════════════ -->
+    <section id="skills" class="section skills" aria-label="Habilidades">
+      <div class="container">
+        <div class="section-header reveal-up">
+          <span class="section-tag">// habilidades</span>
+          <h2 class="section-title">Minha Stack</h2>
+        </div>
+
+        <div class="skills__categories">
+
+          <!-- Frontend -->
+          <div class="skills__category reveal-up">
+            <h3 class="skills__category-title">Frontend</h3>
+            <div class="skills__grid stagger-children">
+              <div class="skill-item">
+                <div class="skill-icon skill-icon--react" aria-hidden="true">⚛</div>
+                <span class="skill-name">React</span>
+              </div>
+              <div class="skill-item">
+                <div class="skill-icon skill-icon--next" aria-hidden="true">N</div>
+                <span class="skill-name">Next.js</span>
+              </div>
+              <div class="skill-item">
+                <div class="skill-icon skill-icon--ts" aria-hidden="true">TS</div>
+                <span class="skill-name">TypeScript</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Backend -->
+          <div class="skills__category reveal-up">
+            <h3 class="skills__category-title">Backend</h3>
+            <div class="skills__grid stagger-children">
+              <div class="skill-item">
+                <div class="skill-icon skill-icon--node" aria-hidden="true">⬡</div>
+                <span class="skill-name">Node.js</span>
+              </div>
+              <div class="skill-item">
+                <div class="skill-icon skill-icon--express" aria-hidden="true">Ex</div>
+                <span class="skill-name">Express.js</span>
+              </div>
+              <div class="skill-item">
+                <div class="skill-icon skill-icon--java" aria-hidden="true">☕</div>
+                <span class="skill-name">Java</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Database -->
+          <div class="skills__category reveal-up">
+            <h3 class="skills__category-title">Banco de Dados</h3>
+            <div class="skills__grid stagger-children">
+              <div class="skill-item">
+                <div class="skill-icon skill-icon--pg" aria-hidden="true">🐘</div>
+                <span class="skill-name">PostgreSQL</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Other areas -->
+          <div class="skills__category reveal-up">
+            <h3 class="skills__category-title">Outras Áreas</h3>
+            <div class="skills__grid stagger-children">
+              <div class="skill-item">
+                <div class="skill-icon skill-icon--security" aria-hidden="true">🔐</div>
+                <span class="skill-name">Cibersegurança</span>
+              </div>
+              <div class="skill-item">
+                <div class="skill-icon skill-icon--pm" aria-hidden="true">📋</div>
+                <span class="skill-name">Gestão de Projetos</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════
+         CONTACT
+    ══════════════════════════════════════ -->
+    <section id="contact" class="section contact" aria-label="Contato">
+      <div class="container">
+        <div class="section-header reveal-up">
+          <span class="section-tag">// contato</span>
+          <h2 class="section-title">Vamos conversar</h2>
+        </div>
+
+        <div class="contact__inner">
+
+          <!-- Left: Info -->
+          <div class="contact__info reveal-left">
+            <div>
+              <h3 class="contact__title">
+                Tem um projeto<br />em mente? <span>Me chama.</span>
+              </h3>
+              <p class="contact__subtitle">
+                Estou aberto a novas oportunidades, projetos freelance e colaborações.
+                Respondo sempre que possível!
+              </p>
+            </div>
+
+            <div class="contact__links">
+              <a href="https://github.com/condehub/" target="_blank" rel="noopener noreferrer" class="contact-link" id="contact-github">
+                <span class="contact-link__icon">🐙</span>
+                <div>
+                  <p class="contact-link__label">GitHub</p>
+                  <p class="contact-link__value">github.com/condehub</p>
+                </div>
+                <span class="contact-link__arrow">→</span>
+              </a>
+
+              <a href="https://linkedin.com/in/jvconde" target="_blank" rel="noopener noreferrer" class="contact-link" id="contact-linkedin">
+                <span class="contact-link__icon">💼</span>
+                <div>
+                  <p class="contact-link__label">LinkedIn</p>
+                  <p class="contact-link__value">linkedin.com/in/jvconde</p>
+                </div>
+                <span class="contact-link__arrow">→</span>
+              </a>
+
+              <a href="mailto:joao.vbconde@gmail.com" class="contact-link" id="contact-email">
+                <span class="contact-link__icon">✉️</span>
+                <div>
+                  <p class="contact-link__label">E-mail</p>
+                  <p class="contact-link__value">joao.vbconde@gmail.com</p>
+                </div>
+                <span class="contact-link__arrow">→</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- Right: Form -->
+          <div class="contact__form-wrapper reveal-right">
+            <form class="contact__form" id="contact-form" novalidate>
+              <div class="form-group">
+                <label class="form-label" for="form-name">Nome</label>
+                <input class="form-input" type="text" id="form-name" name="name" placeholder="Seu nome completo" required />
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="form-email">E-mail</label>
+                <input class="form-input" type="email" id="form-email" name="email" placeholder="seu@email.com" required />
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="form-message">Mensagem</label>
+                <textarea class="form-textarea" id="form-message" name="message" placeholder="Conta mais sobre o seu projeto ou oportunidade..." required></textarea>
+              </div>
+              <button type="submit" class="btn btn-primary form-submit">Enviar Mensagem</button>
+              <p class="form-feedback" id="form-feedback" role="status" aria-live="polite"></p>
+            </form>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ══════════════════════════════════════
+       FOOTER
+  ══════════════════════════════════════ -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer__inner">
+        <span class="footer__logo">JVC.</span>
+        <p class="footer__copy">
+          &copy; <span id="footer-year"></span> João Victor Conde · Feito com ☕ e 💙
+        </p>
+        <button class="footer__back-to-top" id="back-to-top" aria-label="Voltar ao topo">
+          Voltar ao topo
+        </button>
+      </div>
+    </div>
+  </footer>
+
+  <!-- JS -->
+  <script src="js/projects-data.js"></script>
+  <script src="js/main.js"></script>
+  <script>
+    // Footer year
+    document.getElementById('footer-year').textContent = new Date().getFullYear();
+  </script>
+
+</body>
+</html>
