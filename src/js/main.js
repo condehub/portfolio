@@ -358,7 +358,7 @@ function initContact() {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
-        access_key: 'cc4694fe-e3a4-4783-ac30-adab5ef53e06',
+        access_key: window.__ENV.WEB3FORMS_KEY,
         name,
         email,
         message,
