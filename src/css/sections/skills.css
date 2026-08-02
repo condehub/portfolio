@@ -61,26 +61,9 @@
 .skill-icon {
   width: 42px;
   height: 42px;
-  border-radius: var(--radius-md);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: var(--text-lg);
-  font-weight: 700;
-  font-family: var(--font-mono);
+  object-fit: contain;
   flex-shrink: 0;
 }
-
-/* Icon color variants */
-.skill-icon--react  { background: rgba(97, 218, 251, 0.12); color: #61dafb; font-size: var(--text-xl); }
-.skill-icon--next   { background: rgba(255, 255, 255, 0.08); color: #fff; }
-.skill-icon--ts     { background: rgba(49, 120, 198, 0.2); color: #3178c6; font-size: var(--text-sm); }
-.skill-icon--node   { background: rgba(68, 136, 62, 0.2); color: #44883e; }
-.skill-icon--express { background: rgba(255,255,255,0.06); color: var(--muted); font-size: var(--text-sm); }
-.skill-icon--java   { background: rgba(237, 106, 0, 0.15); color: #ed6a00; font-size: var(--text-xl); }
-.skill-icon--pg     { background: rgba(51, 103, 145, 0.2); color: #336791; font-size: var(--text-xl); }
-.skill-icon--security { background: rgba(96, 165, 250, 0.12); color: var(--accent); font-size: var(--text-lg); }
-.skill-icon--pm     { background: rgba(167, 139, 250, 0.12); color: #a78bfa; font-size: var(--text-lg); }
 
 .skill-name {
   font-size: var(--text-base);
