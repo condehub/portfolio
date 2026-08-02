@@ -350,25 +350,46 @@ function initContact() {
       return;
     }
 
-    // Simulated success — replace with your backend/formspree endpoint
     const btn = form.querySelector('.form-submit');
     btn.disabled = true;
     btn.textContent = 'Enviando...';
 
-    setTimeout(() => {
-      form.reset();
-      btn.disabled = false;
-      btn.textContent = 'Enviar Mensagem';
-      setFeedback(feedback, '✓ Mensagem enviada! Retorno em breve.', 'success');
-    }, 1200);
+    fetch('https://api.web3forms.com/submit', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        access_key: 'cc4694fe-e3a4-4783-ac30-adab5ef53e06',
+        name,
+        email,
+        message,
+        from_name: 'Portfolio — Contato',
+      }),
+    })
+      .then(async (res) => {
+        const data = await res.json();
+        if (data.success) {
+          form.reset();
+          setFeedback(feedback, '✓ Mensagem enviada! Retorno em breve.', 'success');
+        } else {
+          setFeedback(feedback, '✗ Erro ao enviar. Tente novamente.', 'error');
+        }
+      })
+      .catch(() => {
+        setFeedback(feedback, '✗ Erro de conexão. Tente novamente.', 'error');
+      })
+      .finally(() => {
+        btn.disabled = false;
+        btn.textContent = 'Enviar Mensagem';
+      });
   });
 }
 
 function setFeedback(el, msg, type) {
   if (!el) return;
   el.textContent = msg;
-  el.style.color = type === 'success' ? 'var(--accent)' : '#f59e0b';
-  setTimeout(() => { el.textContent = ''; }, 4000);
+  const colors = { success: 'var(--accent)', error: '#ef4444', warn: '#f59e0b' };
+  el.style.color = colors[type] || 'var(--muted)';
+  setTimeout(() => { el.textContent = ''; }, 5000);
 }
 
 /* ══════════════════════════════════════════
