@@ -89,7 +89,10 @@
 }
 
 .stat-icon {
-  font-size: var(--text-3xl);
+  width: 44px;
+  height: 44px;
+  object-fit: contain;
+  flex-shrink: 0;
 }
 
 .stat-company {

@@ -75,6 +75,20 @@
   margin-bottom: var(--space-4);
 }
 
+.timeline-meta__company {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.timeline-company-logo {
+  width: 36px;
+  height: 36px;
+  object-fit: contain;
+  flex-shrink: 0;
+  border-radius: var(--radius-sm);
+}
+
 .timeline-company {
   font-size: var(--text-xl);
   font-weight: 700;
