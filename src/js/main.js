@@ -10,6 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initCanvas();
   initProjects();   // must run BEFORE initScrollReveal so dynamic elements exist in DOM
   initFilters();
+  initCertificationsCarousel();
   initScrollReveal(); // observes everything including dynamically rendered cards
   initContact();
   initBackToTop();
@@ -399,4 +400,30 @@ function initBackToTop() {
   const btn = document.getElementById('back-to-top');
   if (!btn) return;
   btn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+}
+
+/* ══════════════════════════════════════
+   CERTIFICATIONS — Carousel (ativa com mais de 12 itens)
+══════════════════════════════════════ */
+function initCertificationsCarousel() {
+  const grid = document.querySelector('.certifications__grid');
+  if (!grid) return;
+
+  const cards = grid.querySelectorAll('.cert-card');
+  if (cards.length <= 12) return;
+
+  const carousel = grid.closest('.certifications__carousel');
+  const prev = carousel && carousel.querySelector('.certifications__nav--prev');
+  const next = carousel && carousel.querySelector('.certifications__nav--next');
+  if (!carousel || !prev || !next) return;
+
+  carousel.classList.add('certifications__carousel--active');
+
+  const step = () => {
+    const gap = parseFloat(getComputedStyle(grid).columnGap) || 0;
+    return cards[0].offsetWidth + gap;
+  };
+
+  prev.addEventListener('click', () => grid.scrollBy({ left: -step(), behavior: 'smooth' }));
+  next.addEventListener('click', () => grid.scrollBy({ left: step(), behavior: 'smooth' }));
 }
