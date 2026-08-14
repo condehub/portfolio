@@ -16,20 +16,37 @@
  */
 
 const PROJECTS = [
-  // ────────────────────────────────────────────
-  // Adicione seus projetos aqui!
-  // Exemplo comentado abaixo:
-  //
-  // {
-  //   id: 'meu-projeto',
-  //   title: 'Nome do Projeto',
-  //   desc: 'Breve descrição do problema que este projeto resolve.',
-  //   icon: '🚀',
-  //   category: ['fullstack'],
-  //   stack: ['React', 'Node.js', 'PostgreSQL'],
-  //   demo: 'https://meu-projeto.vercel.app',
-  //   repo: 'https://github.com/jvcon/meu-projeto',
-  //   highlight: true,
-  // },
-  // ────────────────────────────────────────────
+  {
+    id: 'routinum',
+    title: 'Routinum',
+    desc: 'App de rotinas visuais que aplica a Teoria das Colheres para ajudar pessoas com TEA e TDAH a planejar o dia e dosar a energia.',
+    icon: '🥄',
+    category: ['fullstack'],
+    stack: ['React', 'TypeScript', 'Node.js'],
+    demo: '',
+    repo: '',
+    highlight: false,
+  },
+  {
+    id: 'vstructures',
+    title: 'vStructures',
+    desc: 'Plataforma interativa para aprender estruturas de dados com exemplos visuais em JavaScript, Python e C++.',
+    icon: '🌳',
+    category: ['fullstack'],
+    stack: ['React', 'JavaScript', 'Python', 'C++'],
+    demo: '',
+    repo: '',
+    highlight: false,
+  },
+  {
+    id: 'tcc-libras',
+    title: 'Libras Cotidiano',
+    desc: 'TCC em elaboração — plataforma de aprendizado de Libras com situações do cotidiano para conectar surdos e ouvintes.',
+    icon: '🤟',
+    category: ['fullstack'],
+    stack: ['React', 'TypeScript', 'Node.js', 'PostgreSQL'],
+    demo: '',
+    repo: '',
+    highlight: true,
+  },
 ];
