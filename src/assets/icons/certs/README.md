@@ -3,6 +3,9 @@
 Coloque aqui os SVGs (ou PNGs) das plataformas e instituições
 que emitiram certificados, exibidos na seção **Certificações**.
 
+> Esta pasta guarda os **logos** das plataformas. Os **certificados em
+> PDF** ficam em `assets/certificates/`.
+
 ## Convenção de nomes
 
 | Arquivo | Plataforma / Instituição |

@@ -45,10 +45,12 @@ src/
     components.css
     sections/                 # estilos por seção (hero, about, projects, skills, ...)
   assets/
+    certificates/             # PDFs dos certificados (link "Ver certificado →")
     icons/
       tech/                   # logos de tecnologias (README dentro da pasta explica convenção)
-      certs/                  # logos de certificações
-      education/              # logos de instituições
+      certs/                  # logos de plataformas de certificação
+      companies/              # logos de empresas
+      education/              # logos de instituições de ensino
   image/
     foto formatura.jpg        # foto usada no hero
 .env.example                  # exemplo de configuração (existente no repositório)
@@ -107,7 +109,8 @@ Observação: se o arquivo `src/js/env.js` não existir ou a chave estiver ausen
 ## Como adicionar / modificar conteúdo rápido
 - Adicionar projeto: edite `src/js/projects-data.js` (cada projeto aparece automaticamente na grade).
 - Trocar foto do hero: substitua `src/image/foto formatura.jpg` (ou atualize `index.html`).
-- Adicionar logos/ícones: coloque SVGs/PNGs em `src/assets/icons/tech/`, `certs/` ou `education/`. Há READMEs dentro dessas pastas explicando convenções de nomes e integração.
+- Adicionar logos/ícones: coloque SVGs/PNGs em `src/assets/icons/tech/`, `certs/`, `companies/` ou `education/`. Há READMEs dentro dessas pastas explicando convenções de nomes e integração.
+- Adicionar certificados (PDF): coloque em `src/assets/certificates/` e vincule pelo link "Ver certificado →" no card correspondente.
 - Ajustar estilos: `src/css/sections/` contém arquivos separados por seção para facilitar manutenção.
 
 ---
