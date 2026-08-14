@@ -37,11 +37,9 @@
   width: 52px;
   height: 52px;
   border-radius: var(--radius-lg);
-  background: var(--gradient-primary);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: var(--text-2xl);
+  background: #ffffff;
+  object-fit: contain;
+  padding: 8px;
   flex-shrink: 0;
   box-shadow: var(--shadow-glow);
 }
