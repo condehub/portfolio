@@ -34,3 +34,4 @@ dist/
 .env.local
 .env.*.local
 src/js/env.js
+/assets/certificates
