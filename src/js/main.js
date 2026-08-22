@@ -269,6 +269,17 @@ function initScrollReveal() {
 /* ══════════════════════════════════════════
    PROJECTS — Render from data
 ══════════════════════════════════════════ */
+const TECH_ICONS = {
+  'React':      'assets/icons/tech/React.svg',
+  'JavaScript': 'assets/icons/tech/JavaScript.svg',
+  'TypeScript': 'assets/icons/tech/TypeScript.svg',
+  'Node.js':    'assets/icons/tech/Node.js.svg',
+  'Python':     'assets/icons/tech/Python.svg',
+  'C++':        'assets/icons/tech/cplusplus.svg',
+  'PostgreSQL': 'assets/icons/tech/PostgresSQL.svg',
+  'HTML':       'assets/icons/tech/HTML5.svg',
+  'CSS':        'assets/icons/tech/CSS3.svg',
+};
 function initProjects() {
   const grid = document.getElementById('projects-grid');
   if (!grid) return;
@@ -307,7 +318,12 @@ function initProjects() {
 }
 
 function createProjectCard(p) {
-  const stackBadges = p.stack.map(t => `<span class="badge">${t}</span>`).join('');
+  const stackBadges = p.stack.map(t => {
+    const icon = TECH_ICONS[t];
+    return icon
+      ? `<span class="badge badge--icon"><img src="${icon}" alt="${t}" title="${t}" width="16" height="16"><span class="badge__label">${t}</span></span>`
+      : `<span class="badge">${t}</span>`;
+  }).join('');
   const target = p.repo || p.demo; // prioridade: repo > demo
   const links = [
     p.demo ? `<a href="${p.demo}" target="_blank" rel="noopener" class="project-link">Demo ↗</a>` : '',
