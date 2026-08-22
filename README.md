@@ -133,11 +133,6 @@ Contribuições são bem-vindas: abra uma issue descrevendo o que deseja melhora
 
 ---
 
-## Licença
-Nenhuma licença especificada no repositório. Se quiser tornar este projeto utilizável por terceiros, adicione um arquivo `LICENSE` (MIT ou outra conforme preferir).
-
----
-
 ## Contato
 - GitHub: https://github.com/condehub
 - LinkedIn: https://linkedin.com/in/jvconde
