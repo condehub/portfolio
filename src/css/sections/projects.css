@@ -119,12 +119,12 @@
   font-size: var(--text-sm);
   color: var(--muted);
   line-height: 1.6;
-  flex: 1;
 }
 
 .project-card__stack {
   display: flex;
   flex-wrap: wrap;
+  align-items: center;
   gap: var(--space-2);
 }
 
