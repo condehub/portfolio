@@ -270,15 +270,15 @@ function initScrollReveal() {
    PROJECTS — Render from data
 ══════════════════════════════════════════ */
 const TECH_ICONS = {
-  'React':      'assets/icons/tech/React.svg',
-  'JavaScript': 'assets/icons/tech/JavaScript.svg',
-  'TypeScript': 'assets/icons/tech/TypeScript.svg',
-  'Node.js':    'assets/icons/tech/Node.js.svg',
-  'Python':     'assets/icons/tech/Python.svg',
-  'C++':        'assets/icons/tech/cplusplus.svg',
-  'PostgreSQL': 'assets/icons/tech/PostgresSQL.svg',
-  'HTML':       'assets/icons/tech/HTML5.svg',
-  'CSS':        'assets/icons/tech/CSS3.svg',
+  'React':      'src/assets/icons/tech/React.svg',
+  'JavaScript': 'src/assets/icons/tech/JavaScript.svg',
+  'TypeScript': 'src/assets/icons/tech/TypeScript.svg',
+  'Node.js':    'src/assets/icons/tech/Node.js.svg',
+  'Python':     'src/assets/icons/tech/Python.svg',
+  'C++':        'src/assets/icons/tech/cplusplus.svg',
+  'PostgreSQL': 'src/assets/icons/tech/PostgresSQL.svg',
+  'HTML':       'src/assets/icons/tech/HTML5.svg',
+  'CSS':        'src/assets/icons/tech/CSS3.svg',
 };
 function initProjects() {
   const grid = document.getElementById('projects-grid');
