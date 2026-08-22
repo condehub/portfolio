@@ -17,17 +17,6 @@
 
 const PROJECTS = [
   {
-    id: 'routinum',
-    title: 'Routinum',
-    desc: 'App de rotinas visuais que aplica a Teoria das Colheres para ajudar pessoas com TEA e TDAH a planejar o dia e dosar a energia.',
-    icon: '🥄',
-    category: ['fullstack'],
-    stack: ['React', 'TypeScript', 'Node.js'],
-    demo: '',
-    repo: '',
-    highlight: false,
-  },
-  {
     id: 'vstructures',
     title: 'vStructures',
     desc: 'Plataforma interativa para aprender estruturas de dados com exemplos visuais em JavaScript, Python e C++.',
@@ -35,7 +24,18 @@ const PROJECTS = [
     category: ['fullstack'],
     stack: ['React', 'JavaScript', 'Python', 'C++'],
     demo: '',
-    repo: '',
+    repo: 'https://github.com/condehub/vStructures',
+    highlight: false,
+  },
+  {
+    id: 'calmspace-planner',
+    title: 'CalmSpace Planner',
+    desc: 'Plataforma de planejamento e produtividade minimalista com foco em bem-estar e organização mental.',
+    icon: '🌿',
+    category: ['fullstack'],
+    stack: ['React', 'TypeScript', 'Node.js'],
+    demo: '',
+    repo: 'https://github.com/condehub/calmspace-planner',
     highlight: false,
   },
   {
