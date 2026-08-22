@@ -153,6 +153,19 @@
   transform: translateX(2px);
 }
 
+/* Variante ícone — GitHub SVG */
+.project-link--icon {
+  padding: var(--space-2) var(--space-3);
+  line-height: 0;
+}
+
+.project-link--icon svg {
+  width: 1.1rem;
+  height: 1.1rem;
+  display: block;
+  flex-shrink: 0;
+}
+
 /* Empty / coming-soon state */
 .projects__empty {
   grid-column: 1 / -1;
