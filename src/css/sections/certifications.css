@@ -41,6 +41,14 @@
   font-size: var(--text-xl);
   flex-shrink: 0;
   box-shadow: var(--shadow-glow);
+  /*
+    Harden the icon box against transform drift.
+    The card uses `transition: all` (and reveal-scale animates its
+    transform), which previously leaked into child transforms and made
+    logos look off-center after the reveal settled. Giving the icon box
+    its own transform stack keeps it stable.
+  */
+  transform: translateZ(0);
 }
 
 .cert-card__icon--logo {
@@ -49,29 +57,49 @@
   background: #ffffff;
 }
 
+/*
+  Logo sizing/centering strategy:
+  - Each <img> fills the 48×48 box.
+  - `object-fit` controls crop vs. fit.
+  - `object-position` centers the actual artwork inside the image
+    (raster logos often have asymmetric whitespace, which made them
+    look shifted right). `object-position` is independent of the card's
+    transform/transition, so the reveal animation can no longer drift
+    the logos after the transition settles.
+  - We do NOT use `transform: translateX()` on the logos anymore: the
+    parent `.cert-card` has `transition: all`, and animating the card's
+    own transform (reveal-scale / hover) interacted visually with child
+    transforms, producing the "shifts seconds after render" effect.
+*/
 .cert-card__icon--logo img {
   width: 100%;
   height: 100%;
   object-fit: contain;
-  transform: translateX(-4%);
+  object-position: center;
 }
 
-/* Padronizar tamanho visual: logos com muito whitespace interno usam cover;
-   os demais ficam com contain para não cortarem. */
+/* Logos with too much internal whitespace → cover to fill the box.
+   object-position: center lets the image's geometric center sit in the
+   box center. The old "shifted right" on Alura/Ensina Dev/BluePex was
+   the transform/reveal interaction (now removed), not the image content. */
 .cert-card__icon--logo img[src*="alura.jpg"],
 .cert-card__icon--logo img[src*="cisco-networking-academy-seeklogo.png"],
-.cert-card__icon--logo img[src*="ensinadev.svg"] {
-  object-fit: cover;
-  transform: translateX(0);
-}
-
-/* Alinhamento por logo (ajustes visuais de centro) */
+.cert-card__icon--logo img[src*="ensinadev.svg"],
 .cert-card__icon--logo img[src*="bluepex.jpeg"] {
-  transform: translateX(-6%);
+  object-fit: cover;
+  object-position: center;
 }
 
+/* Escola da Nuvem is line-art → contain keeps the whole cloud visible. */
 .cert-card__icon--logo img[src*="escoladanuvem.svg"] {
-  transform: translateX(2%);
+  object-fit: contain;
+  object-position: center;
+}
+
+/* Google SVG is dense — scale it down so it sits comfortably in the box. */
+.cert-card__icon--logo img[src*="google.svg"] {
+  object-fit: contain;
+  transform: scale(0.75);
 }
 
 .cert-card__body {
