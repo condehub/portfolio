@@ -55,13 +55,11 @@
   object-fit: contain;
 }
 
-/* Logos com muito whitespace interno precisam preencher mais o quadro */
+/* Padronizar tamanho visual: logos com muito whitespace interno usam cover;
+   os demais ficam com contain para não cortarem. */
 .cert-card__icon--logo img[src*="alura.jpg"],
 .cert-card__icon--logo img[src*="cisco-networking-academy-seeklogo.png"],
-.cert-card__icon--logo img[src*="ensinadev.svg"],
-.cert-card__icon--logo img[src*="google.png"],
-.cert-card__icon--logo img[src*="escoladanuvem.jpg"],
-.cert-card__icon--logo img[src*="bluepex.jpg"] {
+.cert-card__icon--logo img[src*="ensinadev.svg"] {
   object-fit: cover;
 }
 
