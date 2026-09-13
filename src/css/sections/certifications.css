@@ -53,7 +53,16 @@
   width: 100%;
   height: 100%;
   object-fit: contain;
-  padding: 4px;
+}
+
+/* Logos com muito whitespace interno precisam preencher mais o quadro */
+.cert-card__icon--logo img[src*="alura.jpg"],
+.cert-card__icon--logo img[src*="cisco-networking-academy-seeklogo.png"],
+.cert-card__icon--logo img[src*="ensinadev.svg"],
+.cert-card__icon--logo img[src*="google.png"],
+.cert-card__icon--logo img[src*="escoladanuvem.jpg"],
+.cert-card__icon--logo img[src*="bluepex.jpg"] {
+  object-fit: cover;
 }
 
 .cert-card__body {
