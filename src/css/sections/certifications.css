@@ -43,6 +43,19 @@
   box-shadow: var(--shadow-glow);
 }
 
+.cert-card__icon--logo {
+  padding: 0;
+  overflow: hidden;
+  background: #ffffff;
+}
+
+.cert-card__icon--logo img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  padding: 4px;
+}
+
 .cert-card__body {
   display: flex;
   flex-direction: column;
